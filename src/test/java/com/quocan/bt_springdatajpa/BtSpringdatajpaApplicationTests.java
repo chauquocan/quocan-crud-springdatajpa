@@ -13,13 +13,13 @@ class BtSpringdatajpaApplicationTests {
 
     //test sql cua repo_branch
     @Test
-    private void insertStudent() {
-        Student student = Student.builder()
-                .firstName("quoc an")
-                .lastName("chau")
-                .email("guoan209")
-                .phone("1234")
-                .build();
+    void saveStudent() {
+        Student student = new Student(12, "Nguyen", "An", "an@gmail.com", "0789295422");
         studentRepository.save(student);
+    }
+
+    @Test
+    void deleteStudent() {
+        studentRepository.deleteById(11l);
     }
 }
